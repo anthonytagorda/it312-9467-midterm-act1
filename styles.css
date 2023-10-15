@@ -84,3 +84,15 @@ body {
 .incorrect {
     background-color: #ff9393;
 }
+
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+}
+
+.progress-bar {
+    width: 0;
+    height: 20px;
+    background-color: #3498db;
+    transition: width 0.3s;
+}
