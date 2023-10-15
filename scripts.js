@@ -1,49 +1,17 @@
-const questions = [
-    // Travel Questions
-    {
-        question: "What language is spoken in the Philippines?",
-        answers: [
-            {text: "English", correct: false},
-            {text: "Spanish", correct: false},
-            {text: "Filipino", correct: true},
-            {text: "Tagalog", correct: false},
-        ]
-    },
-    {
-        question: "What currency is used in the Philippines?",
-        answers: [
-            {text: "Philippine Dollars (PH$)", correct: false},
-            {text: "Philippine Yen (PH¥)", correct: false},
-            {text: "Philippine Peso (PH₱)", correct: true},
-            {text: "Philippine Pound (PH£)", correct: false},
-        ]
-    },
-    {
-        question: "What is the Capital of the Philippines?",
-        answers: [
-            {text: "Baguio", correct: false},
-            {text: "Manila", correct: true},
-            {text: "Cebu", correct: false},
-            {text: "Davao", correct: false},
-        ]
-    },
-    {
-        question: "Where is the most famous beach destination in the Philippines?",
-        answers: [
-            {text: "Manila Bay in Metro Manila", correct: false},
-            {text: "El Nido in Palawan", correct: false},
-            {text: "Boracay in Aklan", correct: true},
-            {text: "Pagudpud Beach in Ilocos Norte", correct: false},
-        ]
-    },
-];
-
 const questionText = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-button");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+// Fetch the questions from the external JSON file
+fetch('questions.json')
+.then(response => response.json())
+.then(data => {
+    questions = data;
+    startQuiz();
+ });
 
 // Start Quiz
 function startQuiz() {
@@ -120,5 +88,3 @@ nextButton.addEventListener("click", ()=> {
         startQuiz();
     }
 });
-
-startQuiz();
