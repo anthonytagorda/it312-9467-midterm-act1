@@ -88,5 +88,50 @@
             {"text": "YAML (YAML Ain't Markup Language)", "correct": false},
             {"text": "JSON (JavaScript Object Notation)", "correct": true}
         ]
+    },
+    {
+        "question": "What is part of a database that holds only one type of information?",
+        "answers": [
+            {"text": "Report", "correct": false},
+            {"text": "Field", "correct": true},
+            {"text": "Record", "correct": false},
+            {"text": "File", "correct": false}
+        ]
+    },
+    {
+        "question": "How many font sizes are permitted by HTML to display text?",
+        "answers": [
+            {"text": "4", "correct": false},
+            {"text": "5", "correct": false},
+            {"text": "6", "correct": false},
+            {"text": "7", "correct": true}
+        ]
+    },
+    {
+        "question": "Which of the following specifies the space between the border of the cell and its contents?",
+        "answers": [
+            {"text": "Cellpadding", "correct": true},
+            {"text": "CellSpacing", "correct": false},
+            {"text": "Border", "correct": false},
+            {"text": "Width", "correct": false}
+        ]
+    },
+    {
+        "question": "To set up the window to capture all Click events, we use which of the following statement?",
+        "answers": [
+            {"text": "window.captureEvents(Even.CLICK);", "correct": true},
+            {"text": "window.handleEvents(Even.CLICK);", "correct": false},
+            {"text": "window.routeEvents(Even.CLICK);", "correct": false},
+            {"text": "window.raiseEvents(Even.CLICK);", "correct": false}
+        ]
+    },
+    {
+        "question": "Which built-in method combines the text of two strings and returns a new string?",
+        "answers": [
+            {"text": "append()", "correct": false},
+            {"text": "concat()", "correct": true},
+            {"text": "attach()", "correct": false},
+            {"text": "None of the above", "correct": false}
+        ]
     }
 ]
