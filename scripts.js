@@ -1,24 +1,27 @@
 const questionText = document.getElementById("question");
 const answerButton = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-button");
+const progressBar = document.getElementById("progress-bar");
 
 let currentQuestionIndex = 0;
 let score = 0;
+let questions = []; // Ensure to declare the 'questions' array
 
 // Fetch the questions from the external JSON file
 fetch('questions.json')
-.then(response => response.json())
-.then(data => {
+  .then(response => response.json())
+  .then(data => {
     questions = data;
     startQuiz();
- });
+  });
 
 // Start Quiz
 function startQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  updateProgressBar();
+  showQuestion();
 }
 
 // Show Question
@@ -30,19 +33,19 @@ function showQuestion() {
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
-              button.innerHTML = answer.text;
-              button.classList.add("btn");
+            button.innerHTML = answer.text;
+            button.classList.add("btn");
         answerButton.appendChild(button);
         if (answer.correct) {
-              button.dataset.correct = answer.correct; 
+            button.dataset.correct = answer.correct;
         }
-              button.addEventListener("click", selectAnswer);
+            button.addEventListener("click", selectAnswer);
     });
 }
 
 function resetState() {
     nextButton.style.display = "none";
-    while(answerButton.firstChild) {
+    while (answerButton.firstChild) {
         answerButton.removeChild(answerButton.firstChild);
     }
 }
@@ -74,17 +77,23 @@ function showScore() {
 
 function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length) {
+    if (currentQuestionIndex < questions.length) {
+        updateProgressBar();
         showQuestion();
     } else {
         showScore();
     }
 }
 
-nextButton.addEventListener("click", ()=> {
+nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length) {
         handleNextButton();
     } else {
         startQuiz();
     }
 });
+
+function updateProgressBar() {
+    const progress = (currentQuestionIndex / questions.length) * 100;
+    progressBar.style.width = `${progress}%`;
+}
