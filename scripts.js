@@ -78,10 +78,11 @@ function showScore() {
 function handleNextButton() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
-        updateProgressBar();
         showQuestion();
+        updateProgressBar();
     } else {
         showScore();
+        updateProgressBar();
     }
 }
 
@@ -94,6 +95,10 @@ nextButton.addEventListener("click", () => {
 });
 
 function updateProgressBar() {
-    const progress = (currentQuestionIndex / questions.length) * 100;
-    progressBar.style.width = `${progress}%`;
+    if (currentQuestionIndex >= questions.length) {
+        progressBar.style.width = '100%';
+    } else {
+        const progress = (currentQuestionIndex / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
 }

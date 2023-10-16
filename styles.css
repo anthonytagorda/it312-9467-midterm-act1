@@ -18,11 +18,25 @@ body {
     padding: 30px;
 }
 
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 50px;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #333;
+  border: 1px solid black;
+  transition: width 0.5s;
+}
+
 .app h1 {
     font-weight: 25px;
     color: #001e4d;
     font-weight: 600;
-    border-bottom: 1px solid #333;
     padding-bottom: 30px;   
 }
 
@@ -83,16 +97,4 @@ body {
 
 .incorrect {
     background-color: #ff9393;
-}
-
-.progress-container {
-    width: 50%;
-    background-color: #eee;
-}
-
-#progress-bar {
-  width: 200px;
-  height: 10px;
-  background-color: #ccc;
-  border: 1px solid #aaa;
 }
