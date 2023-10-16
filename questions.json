@@ -111,7 +111,7 @@
         "question": "Which of the following specifies the space between the border of the cell and its contents?",
         "answers": [
             {"text": "Cellpadding", "correct": true},
-            {"text": "CellSapcing", "correct": false},
+            {"text": "CellSpacing", "correct": false},
             {"text": "Border", "correct": false},
             {"text": "Width", "correct": false}
         ]
