@@ -86,13 +86,13 @@ body {
 }
 
 .progress-container {
-    width: 100%;
+    width: 50%;
     background-color: #eee;
 }
 
-.progress-bar {
-    width: 0;
-    height: 20px;
-    background-color: #3498db;
-    transition: width 0.3s;
+#progress-bar {
+  width: 200px;
+  height: 10px;
+  background-color: #ccc;
+  border: 1px solid #aaa;
 }
